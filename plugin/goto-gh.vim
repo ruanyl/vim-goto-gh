@@ -43,11 +43,12 @@ endif
 
 func! s:Gotogh(...)
   let npm = 'npm'
-  let str = expand('<cword>')
+  " copy the words inside double quote
+  normal! mqyi"`q
+  let str = @@
 
   if executable(npm)
-    let json = webapi#json#decode(system(npm . " show " . str))
-    echom json.repository.url
+    let json = system(npm . " home " . str)
   else
     " Executable bin doesn't exist
     call ErrorMsg('The '.engine.' is not executable!')
