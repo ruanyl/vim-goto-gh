@@ -34,25 +34,20 @@ fun! ErrorMsg(message)
   echoerr string(a:message)
 endfun
 
-if globpath(&rtp, 'autoload/webapi/http.vim') ==# ''
-  echohl ErrorMsg | echomsg 'Gotogh: require ''webapi'', install https://github.com/mattn/webapi-vim' | echohl None
-  finish
-else
-  call webapi#json#true()
-endif
-
 func! s:Gotogh(...)
-  let npm = 'npm'
+  let file_name = expand('%:t')
   " copy the words inside double quote
   normal! mqyi"`q
   let str = @@
 
-  if executable(npm)
-    let json = system(npm . " home " . str)
-  else
-    " Executable bin doesn't exist
-    call ErrorMsg('The '.engine.' is not executable!')
-    return 1
+  if file_name ==? "package.json" && executable("npm")
+    echom "opening..."
+    call system("npm home " . str)
+    echom "done!"
+  elseif file_name ==? "bower.json" && executable("bower")
+    echom "opening, wait..."
+    call system("bower home " . str)
+    echom "done!"
   endif
 
 endfun
