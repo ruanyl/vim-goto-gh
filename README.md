@@ -3,7 +3,7 @@ vim-goto-gh
 
 go to the github repo of a package in package.json
 
-![dotfile1](https://cloud.githubusercontent.com/assets/486382/10679050/b75cd3bc-791e-11e5-958b-8f379915d842.gif)
+![goto-gh](https://cloud.githubusercontent.com/assets/486382/10712495/51122156-7aa5-11e5-93fb-0c918a80e124.gif)
 
 How to install
 -----------------------
