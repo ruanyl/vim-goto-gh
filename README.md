@@ -1,7 +1,10 @@
 vim-goto-gh
 ===========
 
-go to the github repo of a package in package.json
+Quickly open package homepage in: `package.json`, `bower.json`
+
+or any `**/**` uri, for example 
+>'ruanyl/vim-goto-gh' -> open https://github.com/ruanyl/vim-goto-gh
 
 ![goto-gh](https://cloud.githubusercontent.com/assets/486382/10712495/51122156-7aa5-11e5-93fb-0c918a80e124.gif)
 
