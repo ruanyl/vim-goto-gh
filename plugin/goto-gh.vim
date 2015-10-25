@@ -47,10 +47,14 @@ func! s:Goto_gh(...)
 
   if file_name ==? "package.json" && executable("npm")
     echo "opening..."
-    call system("npm home " . str)
+    silent call system("npm home " . str)
+    redraw
     echo "done!"
   elseif file_name ==? "bower.json" && executable("bower")
+    echo "opening..."
     call system("bower home " . str)
+    redraw
+    echo "done!"
   endif
 
 endfun
