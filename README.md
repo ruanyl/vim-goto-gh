@@ -23,6 +23,10 @@ To update the plugin to the latest version, you can run `:BundleUpdate`.
 How to use
 ----------
 
-For convenience it is recommended that you assign a key for this, like so:
+Default key mapping: `<leader>o`
 
-      nnoremap <Leader>o :Gotogh<CR>
+To change the mapping, use:
+
+```
+let g:goto_gh_map = '<leader>xx'
+```
